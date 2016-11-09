@@ -11,6 +11,12 @@ mymodule.controller('table-ctrl', function($scope) {
 		index: 1
 	};
 
+	vm.filterNull = function(key, value) {
+		if (!value) {
+			vm.filters[key] = '';
+		}
+	};
+
 	vm.sort = {
 		// 代表主关键字
 		column: 'id',
